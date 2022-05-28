@@ -9,6 +9,7 @@ django = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
 autopep8 = "*"
+pillow = "*"
 
 [dev-packages]
 
