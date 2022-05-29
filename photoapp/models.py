@@ -7,13 +7,13 @@ from django.contrib.auth.models import User
 class Category(models.Model):
     category = models.CharField(max_length=200)
 
-    def save_image(self):
+    def save_categry(self):
         self.save()
 
-    def delete_image(self):
+    def delete_catgory(self):
         self.delete()
 
-    def update_image(self, pk):
+    def update_category(self, pk):
         image = self.objects.get(id=pk)
         image.update()
 
@@ -24,13 +24,13 @@ class Category(models.Model):
 class Location(models.Model):
     place = models.CharField(max_length=200)
 
-    def save_image(self):
+    def save_location(self):
         self.save()
 
-    def delete_image(self):
+    def delete_location(self):
         self.delete()
 
-    def update_image(self, pk):
+    def update_location(self, pk):
         image = self.objects.get(id=pk)
         image.update()
 
@@ -69,12 +69,10 @@ class Image(models.Model):
         return image
 
     def search_image(self, category):
-        category = self.objects.filter(
-            image_category__category__icontains=category)
+        category = self.objects.filter(image_category__category__icontains=category)
 
     def filter_by_location(self, location):
-        location = self.objects.filter(
-            image_location__place__icontains=location)
+        location = self.objects.filter(image_location__place__icontains=location)
 
     def __str__(self):
         return self.image_name
