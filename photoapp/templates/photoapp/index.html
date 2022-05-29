@@ -1,12 +1,37 @@
 {%extends 'base.html' %}
 
-
-
-
 {%block body %}
-<div class="container position-relative">
-    <h1 text>Hello </h1>
-</div>
+<div class="home img-fluid pb-5">
+    {%include 'navbar.html'%}
 
+    <div class="text-center text-light pt-5 mt-5">
+        <p class="fs-4 text-danger text-uppercase">A wide collection of images</p>
+        <p class="p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Dolor corrupti nihil <br> temporibus quod molestias minima eius rem corporis tenetur odit.<br> 
+            Debitis vero ullam molestiae excepturi delectus <br> exercitationem harum accusamus voluptatum.
+        </p>
+    </div>
+
+
+    <div class="m-3 p-3 row">
+        <div class="col-md-2"></div>
+        <form action="" method="POST" class="col-md-8">
+            {%csrf_token%}
+            <input class="form-control form-control-lg " name="q" type="text" placeholder="search images..." aria-label="search">
+        </form>
+        <div class="col-md-2"></div>
+    </div>
+
+
+    <div class="text-center mt-5 pb-5">
+        {%for category in categories %}
+        <button type="button" class="btn btn-danger rounded-pill ms-3 me-3">
+            <a class='nav-link text-light' href="">{{category.category}}</a>
+        </button>
+        {%endfor%}
+    </div>
+
+
+</div>
 
 {%endblock%}

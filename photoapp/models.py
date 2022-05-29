@@ -26,4 +26,4 @@ class Image(models.Model):
         ordering = ['-uploaded', '-updated']
 
     def __str__(self) :
-        return self.image
+        return self.image_name

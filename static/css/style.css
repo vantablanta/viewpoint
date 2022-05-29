@@ -1,7 +1,27 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 
 body{
     font-family: 'Jost', sans-serif;
     margin: 0;
     padding: 0;
+}
+
+.home{
+    background: url('/static/assets/banner.jpg');
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-bar-items{
+    color: #fff !important;
+}
+
+.nav-bar-items:hover{
+    color: #dd4046 !important;
+}
+
+.text{
+    color: #C0C1C3;
 }
