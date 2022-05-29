@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import redirect, render
 from .models import Category, Image
+from django.db.models import Q
 
 def home(request):
     categories = Category.objects.all()
@@ -20,5 +22,13 @@ def images(request):
     return render(request, 'photoapp/images.html', context )
 
 def search_image(request):
-    context={}
-    return render(request, 'photoapp/search.html', context)
+    query = request.GET.get('q')
+    if query:
+        images = Image.objects.filter(
+            Q(image_name__icontains=query)|
+            Q(image_location__place__icontains=query)|
+            Q(image_category__category__icontains=query)
+        )
+        context={'images':images}
+        return render(request, 'photoapp/search.html', context)
+    return HttpResponse('No search results found')

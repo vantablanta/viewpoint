@@ -15,9 +15,8 @@
 
     <div class="m-3 p-3 row">
         <div class="col-md-2"></div>
-        <form action="" method="POST" class="col-md-8">
-            {%csrf_token%}
-            <input class="form-control form-control-lg " name="q" type="text" placeholder="search images..." aria-label="search">
+        <form action="{%url 'search' %}" method="GET" class="col-md-8">
+            <input class="form-control form-control-lg" name="q" type="text" placeholder="search images..." aria-label="search">
         </form>
         <div class="col-md-2"></div>
     </div>

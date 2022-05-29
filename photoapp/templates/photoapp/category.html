@@ -1,18 +1,15 @@
 {%extends 'base.html'%}
 
 {%block body%}
-<div class="bg">
-    {%include 'navbar.html'%}
-</div>
-<div class="container">
-    <p>{{category_id}} Images</p>
+    <div class="bg">
+        {%include 'navbar.html'%}
+    </div>
+    <div class="container">
+        <p class="category-text">{{category_id}} Images</p>
 
-    {%for image in images %}
-    <p>{{image.image_name}}</p>
-    <img src="{{image.image.url}}" class="w-25">
-    {%endfor%}
-
-
-
-</div> 
+        {%for image in images %}
+        <p class="category-text">{{image.image_name}}</p>
+        <img src="{{image.image.url}}" class="w-25">
+        {%endfor%}
+    </div> 
 {%endblock%}
