@@ -1,7 +1,7 @@
 {%extends 'base.html' %}
 
 {%block body %}
-<div class="home img-fluid pb-5">
+<div class="home img-fluid pb-5 ">
     {%include 'navbar.html'%}
 
     <div class="text-center text-light pt-5 mt-5">
@@ -26,12 +26,19 @@
     <div class="text-center mt-5 pb-5">
         {%for category in categories %}
         <button type="button" class="btn btn-danger rounded-pill ms-3 me-3">
-            <a class='nav-link text-light' href="">{{category.category}}</a>
+            <a class='nav-link text-light' href="{%url 'category' category.id%}">{{category.category}}</a>
         </button>
         {%endfor%}
     </div>
 
 
 </div>
+
+<div class="mt-4">
+    {%include 'photoapp/images.html' %}
+</div>
+
+
+
 
 {%endblock%}
