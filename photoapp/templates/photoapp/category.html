@@ -7,9 +7,6 @@
     <div class="container">
         <p class="category-text">{{category_id}} Images</p>
 
-        {%for image in images %}
-        <p class="category-text">{{image.image_name}}</p>
-        <img src="{{image.image.url}}" class="w-25">
-        {%endfor%}
+        {%include 'photoapp/images.html' %}
     </div> 
 {%endblock%}

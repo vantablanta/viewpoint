@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Category(models.Model):
@@ -14,6 +15,7 @@ class Location(models.Model):
         return self.place
 
 class Image(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     image = models.ImageField(upload_to='images/', height_field=None, width_field=None, max_length=100)
     image_name = models.CharField(max_length=200)
     image_description = models.TextField()
