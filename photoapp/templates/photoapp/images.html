@@ -16,11 +16,9 @@
                     <img src="{{image.image.url}}" alt="" class="img-fluid">
                     <p class="mt-3 mb-3">{{image.image_description}}</p>
                     <strong><small>Posted {{image.uploaded | timesince}} ago by {{image.owner |capfirst}}</small></strong><br>
-                    <strong><small>Updated {{image.updated | timesince}} ago by {{image.owner |capfirst}}</small></strong>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Share</button>
+                    <button type="button" class="btn btn-danger">Copy Link</button>
                 </div>
             </div>
         </div>

@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('images/', views.images, name='images'),
     path('search/', views.search_image, name='search'),
+    # path('copy/<str:pk>/', views.copy_image, name='copy'),
     path('category/<str:pk>/', views.categories, name='category'),
 
   

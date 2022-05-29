@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from .models import Category, Image
 from django.db.models import Q
 
+
 def home(request):
     categories = Category.objects.all()
     images = Image.objects.all()
@@ -32,3 +33,10 @@ def search_image(request):
         context={'images':images}
         return render(request, 'photoapp/search.html', context)
     return HttpResponse('No search results found')
+
+
+# def copy_image(request, pk):
+#     image = Image.objects.get(id=pk)
+#     image_url = Image.objects.filter(image=image)
+#     clipboard.copy(image_url) 
+#     return HttpResponse('Copied!')
