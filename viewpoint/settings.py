@@ -1,6 +1,7 @@
 from pathlib import Path
 import os 
 from decouple import config
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,9 +14,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = False
+MODE = config("MODE", default="dev")
+ALLOWED_HOSTS = ['viewpoint-mn.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -66,19 +67,28 @@ WSGI_APPLICATION = 'viewpoint.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('NAME'),
-        'USER': config('USER'),
-        'PASSWORD': config('PASSWORD'),
-        'HOST': config('HOST', default='127.0.0.1'),
-        'PORT':config('PORT', default=5432, cast=int)
-       
+if config('MODE')=="dev":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('NAME'),
+            'USER': config('USER'),
+            'PASSWORD': config('PASSWORD'),
+            'HOST': config('HOST', default='127.0.0.1'),
+            'PORT':config('PORT', default=5432, cast=int)
+        
+        }
     }
-}
 
+else:
+       DATABASES = {
+       'default': dj_database_url.config(
+           default=config('DATABASE_URL')
+       )
+   }
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
