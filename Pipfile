@@ -11,6 +11,10 @@ psycopg2-binary = "*"
 autopep8 = "*"
 pillow = "*"
 clipboard = "*"
+django-heroku = "*"
+whitenoise = "*"
+dj-database-url = "*"
+gunicorn = "*"
 
 [dev-packages]
 

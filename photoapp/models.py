@@ -10,7 +10,7 @@ class Category(models.Model):
     def save_category(self):
         self.save()
 
-    def delete_catgory(self):
+    def delete_category(self):
         self.delete()
 
     def update_category(self, pk):
@@ -40,14 +40,11 @@ class Location(models.Model):
 
 class Image(models.Model):
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    image = models.ImageField(
-        upload_to='images/', height_field=None, width_field=None, max_length=100)
+    image = models.ImageField( upload_to='images/', height_field=None, width_field=None, max_length=100)
     image_name = models.CharField(max_length=200)
     image_description = models.TextField()
-    image_location = models.ForeignKey(
-        Location, on_delete=models.SET_NULL, null=True)
-    image_category = models.ForeignKey(
-        Category, on_delete=models.SET_NULL, null=True)
+    image_location = models.ForeignKey( Location, on_delete=models.SET_NULL, null=True)
+    image_category = models.ForeignKey( Category, on_delete=models.SET_NULL, null=True)
     uploaded = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

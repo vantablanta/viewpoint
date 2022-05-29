@@ -35,8 +35,4 @@ def search_image(request):
     return HttpResponse('No search results found')
 
 
-# def copy_image(request, pk):
-#     image = Image.objects.get(id=pk)
-#     image_url = Image.objects.filter(image=image)
-#     clipboard.copy(image_url) 
-#     return HttpResponse('Copied!')
+
