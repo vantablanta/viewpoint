@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class Category(models.Model):
     category = models.CharField(max_length=200)
 
-    def save_categry(self):
+    def save_category(self):
         self.save()
 
     def delete_catgory(self):
