@@ -9,13 +9,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">{{image.image_name}} - {{image.image_location}} </h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">{{image.image_name}} - {{image.image_location}}
+                    </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <img src="{{image.image.url}}" alt="" class="img-fluid">
                     <p class="mt-3 mb-3">{{image.image_description}}</p>
-                    <strong><small>Posted {{image.uploaded | timesince}} ago by {{image.owner |capfirst}}</small></strong><br>
+                    <strong><small>Posted {{image.uploaded | timesince}} ago by {{image.owner
+                            |capfirst}}</small></strong><br>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger">Copy Link</button>
