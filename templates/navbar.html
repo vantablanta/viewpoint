@@ -1,21 +1,18 @@
-
 <div class="container-fluid pt-4 mb-4 ps-3 ">
-<div class="row">
-  <div class="col-md-6">
-    <a class="navbar-brand nav-bar-items text-light fs-1" href="{%url 'home' %}">ViewPoint</a>
+  <div class="row">
+    <div class="col-md-6">
+      <a class="navbar-brand nav-bar-items text-light fs-1" href="{%url 'home' %}">ViewPoint</a>
+    </div>
+    <div class="col-md-6">
+      <ul class="nav justify-content-end">
+        {% for location in locations %}
+        <li class="nav-item">
+          <a class="nav-link nav-bar-items fs-5" href="{%url 'location' location.id %}">{{location.place}}</a>
+        </li>
+        {%endfor%}
+      </ul>
+
+    </div>
   </div>
-  <div class="col-md-6">
-    <ul class="nav justify-content-end">
-      {% for location in locations %}
-      <li class="nav-item">
-        <a class="nav-link nav-bar-items fs-5"  href="{%url 'location' location.id %}">{{location.place}}</a>
-      </li>
-      {%endfor%}
-    </ul>
 
-  </div>
 </div>
-  
-</div>
-
-
