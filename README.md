@@ -5,7 +5,7 @@
 >This project is a personal gallery application that allows you to display your photos for others to see.
 
 ##  Live Link  
-[View Site](https://viewpoint-mn.herokuapp.com/)  to visit the site
+>[View Site](https://viewpoint-mn.herokuapp.com/)  to visit the site
   
 
 ## User Story  
