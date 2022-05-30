@@ -1,12 +1,12 @@
 {%extends 'base.html'%}
 
 {%block body%}
-    <div class="bg">
-        {%include 'navbar.html'%}
-    </div>
-    <div class="container">
-        <p class="category-text">Images from {{location_id}} </p>
+<div class="bg">
+    {%include 'navbar.html'%}
+</div>
+<div class="container">
+    <p class="category-text">Images from {{location_id}} </p>
 
-        {%include 'photoapp/images.html' %}
-    </div> 
+    {%include 'photoapp/images.html' %}
+</div>
 {%endblock%}
