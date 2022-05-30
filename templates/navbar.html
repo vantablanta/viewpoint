@@ -6,9 +6,9 @@
   </div>
   <div class="col-md-6">
     <ul class="nav justify-content-end">
-      {%for location in locations %}
+      {% for location in locations %}
       <li class="nav-item">
-        <a class="nav-link nav-bar-items fs-4" aria-current="page" href="#">{{location.place}}</a>
+        <a class="nav-link nav-bar-items fs-5"  href="{%url 'location' location.id %}">{{location.place}}</a>
       </li>
       {%endfor%}
     </ul>
