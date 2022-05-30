@@ -2,7 +2,7 @@
 >Developed by [Michelle-Njeri](https://github.com/vantablanta)  
   
 ## Description  
-This project is a personal gallery application that allows you to display your photos for others to see.
+>This project is a personal gallery application that allows you to display your photos for others to see.
 
 ##  Live Link  
 [View Site](https://viewpoint-mn.herokuapp.com/)  to visit the site

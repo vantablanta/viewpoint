@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from .models import Category, Image
+from .models import Category, Image, Location
 from django.db.models import Q
 
 
@@ -16,6 +16,10 @@ def categories(request, pk):
     context = {'category_id':category_id, 'images':images}
     return render(request, 'photoapp/category.html', context)
 
+def locations(request):
+    locations = Location.objects.all()
+    context ={'locations':locations}
+    return render(request, 'navbar.html', context)
 
 def images(request):
     images = Image.objects.all()
