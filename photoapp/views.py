@@ -33,6 +33,3 @@ def search_image(request):
         context={'images':images}
         return render(request, 'photoapp/search.html', context)
     return HttpResponse('No search results found')
-
-
-
