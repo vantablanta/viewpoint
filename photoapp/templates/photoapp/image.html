@@ -29,10 +29,9 @@
         navigator.clipboard.writeText(window.location.origin + data)
     }
     function myFunction(){
-        alert('Link Copied')
+        alert('Link Copied You can go ahead and paste it ')
     }
 </script>
 {%endblock%}
 
 
-<a class='text-light text-decoration-none' href="{{request.META.HTTP_REFERER}}">Copy Link</a>
