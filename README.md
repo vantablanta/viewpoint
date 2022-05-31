@@ -70,5 +70,5 @@ If you have any question or contributions, please email me at [vantablanta@gmail
   
 ## License 
 
-* [![License](https://img.shields.io/packagist/l/loopline-systems/closeio-api-wrapper.svg)](https://github.com/vantablanta/viewpoint/blob/master/LICENSE)  
-* Copyright (c) 2022 **Michelle Njeri**
+[![License](https://img.shields.io/packagist/l/loopline-systems/closeio-api-wrapper.svg)](https://github.com/vantablanta/viewpoint/blob/master/LICENSE)  
+>Copyright (c) 2022 **Michelle Njeri**
