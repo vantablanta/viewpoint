@@ -1,8 +1,10 @@
 <div class="container">
-
     {%for image in images %}
-    <a href="{%url 'image' image.id%}">
+
+    <a href="{%url 'image' image.id %}">
         <img src="{{image.image.url}}" alt="" class="w-25 m-3">
     </a>
+
+
     {%endfor%}
 </div>
