@@ -1,28 +1,8 @@
 <div class="container">
-    {%for image in images %}
 
-    <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    {%for image in images %}
+    <a href="{%url 'image' image.id%}">
         <img src="{{image.image.url}}" alt="" class="w-25 m-3">
     </a>
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">{{image.image_name}} - {{image.image_location}}
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="{{image.image.url}}" alt="" class="img-fluid">
-                    <p class="mt-3 mb-3">{{image.image_description}}</p>
-                    <strong><small>Posted {{image.uploaded | timesince}} ago by {{image.owner |capfirst}}</small></strong><br>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger">Copy Link</button>
-                </div>
-            </div>
-        </div>
-    </div>
     {%endfor%}
 </div>

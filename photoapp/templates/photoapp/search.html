@@ -4,9 +4,14 @@
 <div class="bg">
     {%include 'navbar.html'%}
 </div>
-
+{%if images%}
 {%include 'photoapp/images.html' %}
 
+{%else%}
+<div class="container">
+    <h4>Sorry! no searches matched</h4>
+</div>
 
 
+{%endif%}
 {%endblock%}
