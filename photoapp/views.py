@@ -33,11 +33,6 @@ def images(request):
     context = {'images':images}
     return render(request, 'photoapp/images.html', context)
 
-def image(request, pk):
-    image = Image.objects.get(id=pk)
-    context = {'image':image}
-    return render(request, 'photoapp/image.html', context)
-
 def search_image(request):
     query = request.GET.get('q')
     if query:
